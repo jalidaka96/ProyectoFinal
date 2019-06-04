@@ -1,0 +1,109 @@
+#novedades {
+	margin-top: 30px;
+	
+}
+
+#novedades > h3 {
+	text-decoration: underline;
+	text-decoration-color: #7386D5;
+	font-family: Montserrat, sans-serif;
+	color: #444;
+	font-size: 40px;
+}
+
+/*@media screen and (max-width:640px) {
+	.lastItems {
+		min-width: 200px;
+		max-width: 200px;yyy
+		
+	}
+}*/
+
+.lastItems{
+	/*background-color: red;*/
+}
+
+.lastItems > a > img {
+	max-height: 200px;
+	min-height: 200px;
+}
+
+.lastItems > a > p {
+	color: black;
+	text-align: center;
+}
+
+.detalleContainer {
+	background-color: #EAE4E4;
+}
+
+.detalleItem {
+	margin:50px;
+	
+}
+
+#imagenmacho {
+	height: 250px;
+	padding-bottom: 20px;
+}
+
+.imagenItem {
+	min-height: 300px;
+	max-height: 300px;
+	margin-bottom: 20px;
+}
+
+.nombreItem {
+	color: black;
+	font-size: 30px;
+}
+
+.precioItem {
+	color: black;
+	font-size: 30px;
+
+}
+
+.descripcionItem {
+	color: black;
+}
+
+.masDetalles {
+	margin-left: 30px;
+	background-color: #fff;
+}
+
+.divListado {
+	border: 2px solid;
+	margin-top: 10px;
+	background-color: #CBEDED;
+	padding: 10px;
+}
+
+.divListado > #usuario {
+	background-color: #46AFED;
+}
+
+.divListado > div{
+	margin-top: 10px;
+	background-color: #fff;
+	margin-left: 20px;
+}
+
+#buttonShowComments {
+	background-color: #2AA4EC;
+	padding: 10px;
+	width: 100%;
+	text-align: center;	 
+}
+
+#buttonShowComments > span{
+	display: block; 
+}
+
+
+#buscar {
+	border: 1px solid blue;
+	margin-top: 20px;
+	
+}
