@@ -8,6 +8,7 @@ class Login extends Controller{
 	}
 	//PARA CARGAR LA VISTA CORRESPONDIENTE
 	function cargarVista() {
+		$_SESSION['intentos'] = 0;
 		$this->view->cargar('login/index');
 	}
 
@@ -16,8 +17,9 @@ class Login extends Controller{
 		sleep(1);
 		$usuario = $_POST['usuario'];
 		$password = $_POST['password'];
-
-		$this->model->login($usuario, $password);
+		$_SESSION['intentos']++;
+		$intentos =  $_SESSION['intentos'];
+		$this->model->login($usuario, $password, $intentos);
 	}
 
 	function cerrarSession() {

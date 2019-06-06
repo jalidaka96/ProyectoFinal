@@ -43,9 +43,11 @@ class Categoria extends Controller{
 		$productos = new productoModel();
 		ob_start();
 		$result = $productos->showProductsCategoria($url[2], $condicion);
+
+		$rowTemporal = mysqli_fetch_assoc($result);
 		ob_clean();
 
-		require 'views/categoria/index.php';
+		require 'views/subcategoria/index.php';
 		
 	}
 }

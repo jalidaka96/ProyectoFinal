@@ -67,26 +67,33 @@ class Usuario {
 		$fecha_nac = $lista['fecha_nac'];
 		$usuario = $lista['usuario'];
 		$password = $lista['password'];
+		$captcha = $lista['captcha'];
 
-		$pass_hash = password_hash($password, PASSWORD_DEFAULT);
+		if ($captcha == $_SESSION['custom_captcha']) {
+			$pass_hash = password_hash($password, PASSWORD_DEFAULT);
 
 		
-		ob_start();
-		$row = $this->obtener_datos_por_usuario($lista['usuario'], $conn);
-		ob_end_clean();
-		if ($row) {
-			
-			echo "EL usuario ya existe";
-		} else {
-			$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password) VALUES ('$usuario', '$nombre', '$apellido', '$correo', $telefono, '$fecha_nac', '$pass_hash')";
-
-			if (mysqli_query($conn, $sql)) {
-			    echo "OK";
+			ob_start();
+			$row = $this->obtener_datos_por_usuario($lista['usuario'], $conn);
+			ob_end_clean();
+			if ($row) {
+				
+				echo "EL usuario ya existe";
 			} else {
-			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password, rol) VALUES ('$usuario', '$nombre', '$apellido', '$correo', $telefono, '$fecha_nac', '$pass_hash', 'usuario')";
+
+				if (mysqli_query($conn, $sql)) {
+				    echo "OK";
+				} else {
+				    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+				mysqli_close($conn);
 			}
-			mysqli_close($conn);
+		} else {
+			echo "El captcha introducido no es correcto";
 		}
+
+		
 
 		
 		

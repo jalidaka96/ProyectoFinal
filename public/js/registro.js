@@ -16,8 +16,16 @@ $(document).ready(function() {
 		})
 	})*/
 
+	function recargar() {
+		$("#recargar").html("<img height='50px;' class='col-8 offset-2' src=\"/proyecto/DAL/captcha.php\"  >")
+	}
 
+	recargar();
 
+	$("#recargarCaptcha").click(function() {
+		recargar();
+		$("#captcha").val("");
+	})
 	$("#registrarBoton").click(function() {
 		
 		event.preventDefault();
@@ -30,6 +38,7 @@ $(document).ready(function() {
 		var usuario = $("#usuario").val();
 		var password = $("#password").val();
 		var repassword = $("#repassword").val();
+		var captcha = $("#captcha").val();
 		var parametros = {
 			nombre : nombre,
 			apellido : apellido,
@@ -37,14 +46,16 @@ $(document).ready(function() {
 			telefono : telefono,
 			fecha_nac : fecha_nac,
 			usuario : usuario,
-			password : password
+			password : password,
+			captcha : captcha
 		};
 
 
 		var correoRe = /\w+@\w+\.+[a-z]/;
 
+		
 
-		if (nombre === "" || apellido === "" || correo === "" || telefono === "" || fecha_nac === "" || usuario === "" || password === "" || repassword === "" ) {
+		/*if (nombre === "" || apellido === "" || correo === "" || telefono === "" || fecha_nac === "" || usuario === "" || password === "" || repassword === "" ) {
 			$("#vacios").html("Todos los campos son obligatoriosss!")
 			$('html,body').animate({
                     scrollTop: $("#vacios").offset().top
@@ -115,7 +126,7 @@ $(document).ready(function() {
                 }, 1000, function(){
                     $("#repassword").focus();
             });
-		} else {
+		} else {*/
 			$("#vacios").html("")
 			$("#nombreError").html("")
 			$("#apellidoError").html("")
@@ -132,14 +143,18 @@ $(document).ready(function() {
 				success: function(response) {
 					if (response == "OK") {
 						window.location = '/proyecto/registrado';
-					} else {
-						//alert("Por favor, vuelve a comprobar todos los datos!")
-						alert(response)
+					}else if (response == "El captcha introducido no es correcto") {
+						$("#errorCaptcha").html("Captcha introducido no es correcto!")
+						$("#captcha").val("");
+						recargar();
+						
+					} else {						
+						window.location = '/proyecto/errorRegistro'
 					}
 					
 				}
 			})
-		}
+		
 
 
 		

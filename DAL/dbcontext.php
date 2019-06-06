@@ -143,6 +143,22 @@ $sql = "ALTER TABLE carrito ADD FOREIGN KEY (usuario) REFERENCES usuarios(usuari
 mysqli_query($conn, $sql);
 
 
+//CREAR LA TABLA DE LOG
+//CREAR LA TABLA CARRITO
+$sql = "CREATE TABLE IF NOT EXISTS log (
+id_log INT(30) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+detalle VARCHAR(200) NOT NULL,
+ubicacion VARCHAR(30) NOT NULL,
+usuario VARCHAR(30),
+fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);";
+
+
+if (mysqli_query($conn, $sql)) {
+	echo "La tabla de LOG se ha creado correctamente. <br>";
+} else {
+	echo "Error: " .$sql . "<br>" . mysqli_error($conn);
+}
 
 //EJECUTAR EL INICIALIZADOR
 $inicializador = new Inicializador();

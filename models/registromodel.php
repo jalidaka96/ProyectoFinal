@@ -15,7 +15,7 @@ class registroModel extends Model {
 	public function insert($lista) {
 		$this->db->connect();
 		$this->conn = $this->db->conn();
-
+		
 		$usuario = new Usuario();
 		$usuario->insertar_datos($lista, $this->conn);
 		

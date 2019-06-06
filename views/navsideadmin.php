@@ -24,6 +24,16 @@
                 
                 
             </li>
+
+
+            <!-- BOTON PARA ACCEDER AL LOG -->
+            <li>
+                <button class="btn btn-link" >
+                    <a href="/proyecto/log"  aria-expanded="false" >LOG <span class="glyphicon glyphicon-phone"></a>
+                </button>
+                
+                
+            </li>
         </ul>
 
     </nav>

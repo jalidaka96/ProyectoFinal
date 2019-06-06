@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +62,23 @@
 
 				<p id="vacios"></p>
 
+				<div class="form-group">
+					<p id="recargar"></p>
+					<label>Recargar captcha</label>
+					<a class="btn btn-primary" id="recargarCaptcha"><span class="glyphicon glyphicon-refresh"></span></a><br><br>
+
+					<input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha" >
+					<p id="errorCaptcha"></p>
+				</div>
+
+				
+				
+
+				
+
 				<button id="registrarBoton" type="submit"  class="btn btn-primary col-6  col-md-4 offset-3 offset-md-4">Registrar</button>
+
+				<p id="errorInesperado"></p>
 			</form>
 			
 

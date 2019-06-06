@@ -22,7 +22,8 @@ class Registro extends Controller {
 		$fecha_nac = $_POST['fecha_nac'];
 		$usuario = $_POST['usuario'];
 		$password = $_POST['password'];
-		$lista = ['nombre' => $nombre, 'apellido' => $apellido, 'correo' => $correo, 'telefono' => $telefono, 'fecha_nac' => $fecha_nac, 'usuario' => $usuario, 'password' => $password];
+		$captcha = $_POST['captcha'];
+		$lista = ['nombre' => $nombre, 'apellido' => $apellido, 'correo' => $correo, 'telefono' => $telefono, 'fecha_nac' => $fecha_nac, 'usuario' => $usuario, 'password' => $password, 'captcha' => $captcha];
 		
 
 		$this->model->insert($lista);

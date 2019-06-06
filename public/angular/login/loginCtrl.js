@@ -38,6 +38,8 @@ miApp.controller("loginCtrl", function($scope) {
 
 						alert("Nombre de usuario o contraseña incorrectos!")
 						$scope.loginError = "Nombre de usuario o contraseña incorrectos!";
+					} else {
+						console.log(response)
 					}
 				}
 			});
