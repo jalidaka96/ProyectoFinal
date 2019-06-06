@@ -47,13 +47,13 @@
 		
 
 		<!-- CAPA EN LA CUAL SE MUESTRAN LOS 4 ULTIMOS PRODUCTOS SUBIDOS A LA BASE DE DATOS-->
-		<div id="novedades" ng-hide="novedadesCapa">
+		<div class="apartados" id="novedades" ng-hide="novedadesCapa">
 			<h3>NOVEDADES</h3>
 			
 
 			
 			<div class="row">
-				<div ng-repeat="x in items" class="col-6 col-lg-3">
+				<div ng-repeat="x in items" class="col-6 col-lg-3 encima">
 					<div class="lastItems" >
 						<a href="producto/detallesProducto/{{x.id_producto}}">
 							<img class="col-12" src="{{x.imagen}}">
@@ -66,13 +66,14 @@
 				</div>
 			</div>
 		</div>
+		<hr>
 
 		<!-- CAPA EN LA CUAL SE MUESTRAN LOS PRODUCTOS CUYA CATEGORIA ES DE ORDENADOR-->
-		<div id="ordenadores" ng-hide="ordenadoresCapa">
-			<h3>LO ÚLTIMO EN ORDENADORES</h3>
+		<div class="apartados" id="ordenadores" ng-hide="ordenadoresCapa">
+			<h3>ORDENADORES</h3>
 
 			<div class="row">
-				<div ng-repeat="x in ordenadores" class="col-6 col-lg-3">
+				<div ng-repeat="x in ordenadores" class="col-6 col-lg-3 encima">
 					<div class="lastItems" >
 						<a href="producto/detallesProducto/{{x.id_producto}}">
 							<img class="col-12" src="{{x.imagen}}">
@@ -85,12 +86,12 @@
 				</div>
 			</div>
 		</div>
-
+		<hr>
 		<!-- CAPA EN LA CUAL SE MUESTRAN LOS PRODUCTOS CUYA CATEGORIA ES DE MOVILES-->
-		<div id="novedades" ng-hide="movilesCapa">
-			<h3>LO ÚLTIMO EN MOVILES</h3>
+		<div class="apartados" id="novedades" ng-hide="movilesCapa">
+			<h3>MOVILES</h3>
 			<div class="row">
-				<div ng-repeat="x in moviles" class="col-6 col-lg-3">
+				<div ng-repeat="x in moviles" class="col-6 col-lg-3 encima">
 					<div class="lastItems" >
 						<a href="producto/detallesProducto/{{x.id_producto}}">
 							<img class="col-12" src="{{x.imagen}}">
@@ -103,12 +104,13 @@
 				</div>
 			</div>
 		</div>
+		<hr>
 
 		<!-- CAPA EN LA CUAL SE MUESTRAN LOS PRODUCTOS CUYA CATEGORIA ES DE PERIFERICOS-->
-		<div id="perifericosCapa" ng-hide="perifericosCapa">
-			<h3>LO ÚLTIMO EN PERIFÉRICOS</h3>
+		<div class="apartados" id="perifericosCapa" ng-hide="perifericosCapa">
+			<h3>PERIFÉRICOS</h3>
 			<div class="row">
-				<div ng-repeat="x in perifericoss" class="col-6 col-lg-3">
+				<div ng-repeat="x in perifericoss" class="col-6 col-lg-3 encima">
 					<div class="lastItems" >
 						<a href="producto/detallesProducto/{{x.id_producto}}">
 							<img class="col-12" src="{{x.imagen}}">

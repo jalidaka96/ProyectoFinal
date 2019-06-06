@@ -3,13 +3,21 @@
 	
 }
 
-#novedades > h3 {
-	text-decoration: underline;
-	text-decoration-color: #7386D5;
-	font-family: Montserrat, sans-serif;
+
+
+.apartados > h3 {
+	font-family: "Times New Roman", Times, serif;
 	color: #444;
 	font-size: 40px;
+	background-color: #F9F9F9;
+	margin-bottom: 50px;
 }
+
+.encima:hover {
+	border: 3px solid #507DB1;
+}
+
+
 
 /*@media screen and (max-width:640px) {
 	.lastItems {

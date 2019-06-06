@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark barraNavegacion">
 	<ul class="navbar-nav">
         <a class="navbar-brand" href="#">TeknoMeli</a>
     </ul>
@@ -12,7 +12,7 @@
         
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNabvar">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon "></span>
     </button>
 
 	<div class="collapse navbar-collapse" id="collapsibleNabvar">
