@@ -3,6 +3,68 @@
 	
 }
 
+#novedades > h3{
+	border-right: 3px solid;
+}
+
+.apartados > h3{
+	border-left: 3px solid;
+	padding-left: 20px;
+	
+}
+
+
+#novedadesDestacado {
+	border: 1px solid;
+	padding: 20px;
+}
+
+.precio {
+	color: red!important;
+	font-size: 20px;
+}
+
+#dropdownCategoria {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#dropdownCategoria > a{
+	background-color: white;
+	color: black;
+}
+
+#dropdownCategoria > a:hover{
+	border: 2px solid blue;
+}
+
+#dropdownSubcategoriaO{
+	font-family: "Times New Roman", Times, serif;
+}
+
+#dropdownSubcategoriaO > a{
+	background-color: #E8E3E2;
+	color: black;
+}
+
+#dropdownSubcategoriaM{
+	font-family: "Times New Roman", Times, serif;
+}
+
+#dropdownSubcategoriaM > a{
+	background-color: #E8E3E2;
+	color: black;
+}
+
+#dropdownSubcategoriaP{
+	font-family: "Times New Roman", Times, serif;
+}
+
+#dropdownSubcategoriaP > a{
+	background-color: #E8E3E2;
+	color: black;
+}
 
 
 .apartados > h3 {
@@ -15,6 +77,10 @@
 
 .encima:hover {
 	border: 3px solid #507DB1;
+}
+
+.encima > div > a {
+	text-decoration: none;
 }
 
 
@@ -41,18 +107,21 @@
 	text-align: center;
 }
 
+/*ESTILOS PARA LA PAGINA DE DETALLE DE UN PRODUCTI*/
 .detalleContainer {
 	background-color: #EAE4E4;
 }
 
 .detalleItem {
 	margin:50px;
-	
+	font-family: "Times New Roman", Times, serif;
 }
 
-#imagenmacho {
-	height: 250px;
-	padding-bottom: 20px;
+
+
+#capaImagen {
+	background-color: white;
+	text-align: center;
 }
 
 .imagenItem {
@@ -77,7 +146,6 @@
 }
 
 .masDetalles {
-	margin-left: 30px;
 	background-color: #fff;
 }
 
@@ -115,3 +183,72 @@
 	margin-top: 20px;
 	
 }
+
+
+
+
+
+/*ESTILO PARA FOOTER*/
+
+#footer {
+	background-color: #4F9CA6;
+	margin-top: 100px;
+	padding:20px;
+}
+
+
+#footer > div > div > a {
+	color: black;
+}
+
+#footer > div > p{
+	display: none;
+}
+
+.infoFooter {
+	display: block;
+}
+
+@media (max-width: 768px) {
+	#footer > div > b{
+		display: none;
+	}
+
+	#footer > div > p{
+		display: block;
+	}
+
+	.infoFooter {
+		display: none;
+	}
+
+	#footer > div > p > a{
+		background-color: #3ACEE1;
+	}
+
+	.collapse > div.active {
+		background-color: #3AB8C8;
+	}
+	.collapse > div{
+		background-color: #3AB8C8;
+	}
+
+	.collapse > div > a{
+		color: black;
+		text-decoration: none;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

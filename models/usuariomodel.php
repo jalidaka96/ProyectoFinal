@@ -69,8 +69,27 @@ class Usuario {
 		$password = $lista['password'];
 		$captcha = $lista['captcha'];
 
+		function sanitize($str) {
+			$str=str_replace("&","&amp;",$str);
+			$str=str_replace("\"","&quot;",$str);
+			$str=str_replace("'","&apos;",$str);
+			$str=str_replace(">","&gt;",$str);
+			$str=str_replace("<","&lt;",$str);
+			$str=str_replace("€","&lt;",$str);
+			return $str;
+		}
+
+		$nombreS = sanitize($nombre);
+		$apellidoS = sanitize($apellido);
+		$correoS = sanitize($correo);
+		$telefonoS = sanitize($telefono);
+		$fecha_nacS = sanitize($fecha_nac);
+		$usuarioS = sanitize($usuario);
+		$passwordS = sanitize($password);
+		$captchaS = sanitize($captcha);
+
 		if ($captcha == $_SESSION['custom_captcha']) {
-			$pass_hash = password_hash($password, PASSWORD_DEFAULT);
+			$pass_hash = password_hash($passwordS, PASSWORD_DEFAULT);
 
 		
 			ob_start();
@@ -80,7 +99,7 @@ class Usuario {
 				
 				echo "EL usuario ya existe";
 			} else {
-				$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password, rol) VALUES ('$usuario', '$nombre', '$apellido', '$correo', $telefono, '$fecha_nac', '$pass_hash', 'usuario')";
+				$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password, rol) VALUES ('$usuarioS', '$nombreS', '$apellidoS', '$correoS', $telefonoS, '$fecha_nacS', '$pass_hash', 'usuario')";
 
 				if (mysqli_query($conn, $sql)) {
 				    echo "OK";
@@ -119,6 +138,7 @@ class Usuario {
 
 		if (mysqli_query($conn, $sql)) {
 			echo "OK";
+			
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}

@@ -29,6 +29,13 @@ class perfilModel extends Model {
 	}
 
 	
+	public function changeUser($lista) {
+		$this->db->connect();
+		$this->conn = $this->db->conn();
+
+		$usuario = new Usuario();
+		$usuario->editar($lista, $this->conn);
+	}
 
 	
 }

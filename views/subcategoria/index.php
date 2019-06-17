@@ -21,7 +21,7 @@
 
 
 	<div class="container">
-		<div id="novedades" ng-hide="novedadesCapa">
+		<div ng-hide="novedadesCapa">
 			<h3><?php echo $url[2]; ?></h3>
 			<div class="row">
 
@@ -42,6 +42,7 @@
 									<a href="/proyecto/producto/detallesProducto/<?php echo $row['id_producto']; ?>">
 										<img class="col-12" src="/proyecto/<?php echo $row['imagen']; ?>">
 										<p><?php echo $row['nombre']; ?></p>
+										<p class="precio"><?php echo $row['precio']; ?>€</p>
 									</a>
 									
 									

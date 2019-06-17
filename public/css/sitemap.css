@@ -1,0 +1,29 @@
+#sitemap {
+	padding-bottom: 250px;
+	margin-top: 80px;
+}
+
+.contenedor{
+	padding-top: 5px;
+	background-color: #C6D7D7;
+	
+	/*background-color: #C97100;*/
+
+}
+
+body {
+	background-color: #E2F0F0;
+}
+
+
+div > h5 {
+	color: #341E04;
+	font-size: 50px;
+	font-style: oblique;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#botonSide {
+	display: none !important;
+}
+

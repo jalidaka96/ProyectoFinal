@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     align-items: stretch;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #sidebar {
@@ -28,9 +29,6 @@ a[data-toggle="collapse"] {
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
     }
 }
 
@@ -113,3 +111,6 @@ ul ul a {
     color: white;
 }
 
+.barraNavegacion {
+    font-family: "Times New Roman", Times, serif;
+}

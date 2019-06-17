@@ -36,7 +36,7 @@ class Inicializador {
 		$password3 = "1234";
 		$pass_hash3 = password_hash($password3, PASSWORD_DEFAULT);
 
-		$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password, rol) VALUES ('jali_br', 'Khalid', 'Aka', 'jali_br@gmail.com', 621478587, '14/04/1996', '$pass_hash3', 'usuario')";
+		$sql = "INSERT INTO usuarios (usuario, nombre, apellido, email, telefono, fecha_nac, password, rol) VALUES ('jali_br', 'Khalid', 'Aka', 'jali_br@gmail.com', 621478587, '14/04/1997', '$pass_hash3', 'usuario')";
 
 
 		if (mysqli_query($conn, $sql)) {

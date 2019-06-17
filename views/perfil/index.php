@@ -8,6 +8,7 @@
 </head>
 <body ng-app="miApp" ng-controller="perfilCtrl">
 	<?php require 'views/header.php' ?>
+	<link rel="stylesheet" type="text/css" href="/proyecto/public/css/perfil.css">
 	<?php require 'views/nav.php' ?>
 	<div class="col-12" style="background-color: brown;">
 		<a class="migas" href="<?php echo constant('URL') ?>">Home</a>

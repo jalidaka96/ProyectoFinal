@@ -66,8 +66,32 @@ miApp.controller("mainCtrl", function($scope, $http) {
 		//console.log(resp.data);
 		$scope.todo = resp.data;
 	})
+	var storage = localStorage;
+	$scope.storage = function(subcategoria) {
+		
 
+		storage.setItem("item", subcategoria);
 
+	}
+
+	if (storage.getItem("item")) {
+		var item = storage.getItem("item");
+		//console.log(item)
+
+		var jsonSubcategoria = {
+			subcategoria : item
+		};
+
+		$http.get('/proyecto/producto/mostrarPorSubcategoria/',  {
+				params: jsonSubcategoria
+			})
+		.then(function(resp) {
+			console.log(resp.data);
+			$scope.relacion = resp.data;
+			$scope.interes = true;
+		})
+
+	}
 
 	//METODO DE SUSTITUCION
 
@@ -137,7 +161,6 @@ miApp.controller("mainCtrl", function($scope, $http) {
 		$scope.sustitucion();
 		$scope.busqueda = "-Altavoces-";
 		$scope.carrusel = true;
-		console.log("jajaj")
 	}
 
 
@@ -160,6 +183,29 @@ miApp.controller("mainCtrl", function($scope, $http) {
 			//$scope.todo = resp.data;
 		})
 	}
+
+
+
+	$scope.dropdownOrdenadores = function() {
+		$scope.dropdownSubcategoriaOrdenadores = true;
+		$scope.dropdownSubcategoriaMoviles = false;
+		$scope.dropdownSubcategoriaPerifericos = false;
+	}
+
+	$scope.dropdownMoviles = function() {
+		$scope.dropdownSubcategoriaOrdenadores = false;
+		$scope.dropdownSubcategoriaMoviles = true;
+		$scope.dropdownSubcategoriaPerifericos = false;
+	}
+
+	$scope.dropdownPerifericos = function() {
+		$scope.dropdownSubcategoriaOrdenadores = false;
+		$scope.dropdownSubcategoriaMoviles = false;
+		$scope.dropdownSubcategoriaPerifericos = true;
+	}
+
+
+
 
 	
 

@@ -17,7 +17,7 @@ $(document).ready(function() {
 	})*/
 
 	function recargar() {
-		$("#recargar").html("<img height='50px;' class='col-8 offset-2' src=\"/proyecto/DAL/captcha.php\"  >")
+		$("#recargar").html("<img height='50px;'  src=\"/proyecto/DAL/captcha.php\"  >")
 	}
 
 	recargar();
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 		
 
-		/*if (nombre === "" || apellido === "" || correo === "" || telefono === "" || fecha_nac === "" || usuario === "" || password === "" || repassword === "" ) {
+		if (nombre === "" || apellido === "" || correo === "" || telefono === "" || fecha_nac === "" || usuario === "" || password === "" || repassword === "" ) {
 			$("#vacios").html("Todos los campos son obligatoriosss!")
 			$('html,body').animate({
                     scrollTop: $("#vacios").offset().top
@@ -126,7 +126,7 @@ $(document).ready(function() {
                 }, 1000, function(){
                     $("#repassword").focus();
             });
-		} else {*/
+		} else {
 			$("#vacios").html("")
 			$("#nombreError").html("")
 			$("#apellidoError").html("")
@@ -194,7 +194,7 @@ $(document).ready(function() {
 		
 		
 
-
+	}
 
 		
 	})

@@ -64,12 +64,12 @@ miApp.controller("perfilCtrl", function($scope, $http) {
 
 		$.ajax({
 			data: $scope.changesJson,
-			url: '/proyecto/admin/modificarUsuario/',
+			url: '/proyecto/perfil/modificarUsuario/',
 			type: 'post',
 			success: function(response) {
 				console.log(response);
 				$scope.modificar(false);
-				$scope.config_user($scope.detalleUsuario.usuario);
+				location.reload()
 				
 			}
 		})

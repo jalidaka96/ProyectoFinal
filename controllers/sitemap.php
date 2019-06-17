@@ -2,15 +2,14 @@
 
 
 
-class About extends Controller{
+class Sitemap extends Controller{
 	function __construct() {
 		parent::__construct();
-		$this->view->mensaje = "ABOUT US";
 		
 	}
 
 	function cargarVista() {
-		$this->view->cargar('aboutUs/index');
+		$this->view->cargar('sitemap/index');
 	}
 }
 

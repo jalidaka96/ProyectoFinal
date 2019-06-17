@@ -14,7 +14,6 @@ class Login extends Controller{
 
 	/*ESTOS METODOS SIRVEN PARA PODER ACCEDER O CERRAR SESION DEL USUARIO*/
 	function login() {
-		sleep(1);
 		$usuario = $_POST['usuario'];
 		$password = $_POST['password'];
 		$_SESSION['intentos']++;
@@ -23,7 +22,6 @@ class Login extends Controller{
 	}
 
 	function cerrarSession() {
-		session_start();
 		session_destroy();
 		header('Location: /proyecto/');
 	}

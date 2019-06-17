@@ -5,6 +5,8 @@
 	<script src="/proyecto/public/angular/angular.js"></script>
 	<script src="/proyecto/public/angular/appModule.js"></script>
 	<script src="/proyecto/public/angular/admin/adminCtrl.js"></script>
+	
+
 
 </head>
 <body ng-app="miApp" ng-controller="adminCtrl">

@@ -43,7 +43,7 @@ class productoModel extends Model {
 		$this->db->connect();
 		$this->conn = $this->db->conn();
 
-		$sql = "SELECT * FROM inventario ORDER BY id_producto DESC limit 4";
+		$sql = "SELECT * FROM inventario ORDER BY id_producto DESC limit 3";
 		$result = mysqli_query($this->conn, $sql);
 		$lista = [];
 
@@ -212,6 +212,29 @@ class productoModel extends Model {
 			echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
 		}
 		mysqli_close($this->conn);
+	}
+
+
+	public function mostrarPorSubcategoria($item) {
+		$this->db->connect();
+		$this->conn = $this->db->conn();
+
+		$sql = "SELECT * FROM inventario WHERE subcategoria = '$item' ORDER BY fecha_subida_producto DESC LIMIT 4";
+
+		$result = mysqli_query($this->conn, $sql);
+
+			
+		$lista = [];
+
+		if (mysqli_num_rows($result) > 0) {
+			    // output data of each row
+		    while($row = mysqli_fetch_assoc($result)) {
+		        array_push($lista, $row);
+		    }
+		    echo json_encode($lista);
+		} else {
+		    echo "0 results";
+		}
 	}
 
 	

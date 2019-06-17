@@ -56,16 +56,18 @@
 				<!-- SE DEBE REPETIR LA CONTARSEÑA Y QUE COINCIDAN-->
 				<div class="form-group">
 					<label></label>
-					<input type="password" class="form-control" placeholder="Vuelva a repetir la contraseña! " id="repassword">
+					<input type="password" class="form-control" placeholder="¡Vuelva a repetir la contraseña! " id="repassword">
 					<p id="repasswordError"></p>
 				</div>
 
 				<p id="vacios"></p>
 
 				<div class="form-group">
-					<p id="recargar"></p>
-					<label>Recargar captcha</label>
-					<a class="btn btn-primary" id="recargarCaptcha"><span class="glyphicon glyphicon-refresh"></span></a><br><br>
+					<p  > 
+						<span class="col-md-8 offset-md-2" id="recargar"></span>
+						<a class="btn btn-primary" id="recargarCaptcha"><span class="glyphicon glyphicon-refresh"></span></a><br><br>
+					</p>
+					
 
 					<input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha" >
 					<p id="errorCaptcha"></p>

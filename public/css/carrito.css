@@ -1,0 +1,57 @@
+body {
+	background-color: #E2DAD9;
+	font-family: Verdana;
+  font-family: 'PT Sans';
+}
+
+#botonSide {
+	display: none!important;
+}
+
+#carrito {
+	padding-top: 50px;
+}
+
+#tramite {
+	padding-top: 40px;
+	border: 1px solid;
+	border-top: 10px solid;
+	background-color: #FFF;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+}
+
+#detalleCarrito {
+	border: 1px solid;
+	background-color: #FFF;
+	border-top: 10px solid;
+	margin-bottom: 30px;
+}
+
+.quitar {
+	text-decoration: none;
+	color: grey;
+}
+
+#formaDePago  {
+	margin-top: 50px;
+	padding-top: 40px;
+	border: 1px solid;
+	border-top: 10px solid;
+	text-align: center;
+	background-color: #FFF;
+}
+
+
+
+#paypal-button-container {
+	padding-top: 40px;
+}
+
+#vaciarCesta {
+	border: 1px solid;
+	padding: 10px;
+	text-decoration: none;
+	color: black;
+	background-color: #EA9185;
+}

@@ -48,7 +48,7 @@ if (mysqli_query($conn, $sql)) {
 $sql = "CREATE TABLE IF NOT EXISTS inventario (
 id_producto INT(30) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
 nombre VARCHAR(100) NOT NULL,
-detalle VARCHAR(400) NOT NULL,
+detalle VARCHAR(900) NOT NULL,
 precio INT(50) NOT NULL,
 categoria VARCHAR(20) NOT NULL,
 subcategoria VARCHAR(20) NOT NULL,
@@ -119,10 +119,9 @@ mysqli_query($conn, $sql);*/
 
 //CREAR LA TABLA CARRITO
 $sql = "CREATE TABLE IF NOT EXISTS carrito (
-id_compra INT(30) NOT NULL PRIMARY KEY,
+id_compra INT(30) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 id_producto INT(30) NOT NULL, 
 usuario VARCHAR(30) NOT NULL,
-cantidad int(50) NULL,
 precio VARCHAR(10) NULL
 );";
 

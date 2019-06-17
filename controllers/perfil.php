@@ -19,6 +19,19 @@ class Perfil extends Controller{
 		$usuario = $_GET['usuario'];
 		$this->model->showDetail($usuario);
 	}
+
+	public function modificarUsuario() {
+		$nombre = $_POST['nombre'];
+		$apellido = $_POST['apellido'];
+		$email = $_POST['email'];
+		$telefono = $_POST['telefono'];
+		$fecha_nac = $_POST['fecha_nac'];
+		$usuario = $_POST['usuario'];
+		$user = $_POST['user'];
+		$lista = ['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono, 'fecha_nac' => $fecha_nac, 'usuario' => $usuario, 'user' => $user];
+		$_SESSION['usuario'] = $usuario;
+		$this->model->changeUser($lista);
+	}
 }
 
 

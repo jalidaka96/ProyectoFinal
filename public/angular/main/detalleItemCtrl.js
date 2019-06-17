@@ -1,5 +1,39 @@
 miApp.controller("detalleItemCtrl", function($scope, $http) {
 	
+	$scope.contar = function() {
+		$http.get('/proyecto/carrito/contarCarrito/')
+		.then(function(resp) {
+			console.log(resp.data)
+			$scope.cantidad = resp.data['COUNT(*)'];
+			console.log($scope.cantidad)
+			//alert($scope.cantidad)
+			var storage = localStorage;
+			storage.setItem("cantidad", $scope.cantidad);
+		})
+	}
+
+	//AÑADIR AL CARRITO
+	$scope.anadirCarrito = function($id, $precio) {
+		var jsonCarrito = {
+			id_producto : $id,
+			precio: $precio
+		};
+		$http.get('/proyecto/carrito/insertarCarrito/',  {
+			params: jsonCarrito
+		})
+		.then(function(resp) {
+			console.log(resp.data);
+			$scope.contar();
+			window.location.reload();
+			
+		})
+	}
+
+	$scope.enCesta = function() {
+		window.location.href = '/proyecto/carrito';
+	}
+
+	
 
 	$scope.mostrarComentar = function() {
 		$scope.botones = true;

@@ -2,20 +2,22 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/proyecto/public/css/login.css">
+	
 	<script src="/proyecto/public/angular/angular.js"></script>
 	<script src="/proyecto/public/angular/appModule.js"></script>
 	<script src="/proyecto/public/angular/login/loginCtrl.js"></script>
 </head>
 <body ng-app="miApp" ng-controller="loginCtrl">
+
 	<?php require 'views/header.php' ?>
+	<link rel="stylesheet" type="text/css" href="/proyecto/public/css/login.css">
 	<?php require 'views/nav.php' ?>
 
 	<!-- PAGINA CON UN FORMULARIO DE INICIO DE SESION-->
 	<div class="container">
 		<div id="login" class="col-md-7 col-lg-6 offset-md-3" ng-submit="login()">
 			<div>
-				<h2>Iniciar sesión</h2>
+				<h1>Iniciar sesión</h1>
 				<hr>
 			</div>
 			<form >
@@ -31,14 +33,10 @@
 					
 				</div>	
 				<p ng-show="loginEnviando">Enviando</p>
-				{{enviando}}
-				{{loginError}}
+				<p ng-show="loginError">Nombre de usuario o contraseña incorrectos!</p>
 				
-				<div class="form-group form-check">
-					<label class="form-check-label">
-						<input type="checkbox" class="form-check-input">Mantener sesión
-					</label>
-				</div>
+				
+				
 				<button  type="submit" class="btn btn-primary col-6  col-md-4 offset-3 offset-md-4" >Iniciar sesion</button>
 				
 			</form>

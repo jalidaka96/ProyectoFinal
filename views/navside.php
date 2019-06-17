@@ -4,6 +4,7 @@
         <div class="sidebar-header">
             <h3>Categorias</h3>
         </div>
+        <hr>
 
         
         <ul class="list-unstyled components">
@@ -58,6 +59,6 @@
                 </ul>
             </li>
         </ul>
-
+        
     </nav>
     

@@ -30,9 +30,13 @@ class producto extends Controller{
 			
 			
 			$puntuacionTotal = $puntuacion->puntuacion($row['id_producto']);
+			require 'models/carritomodel.php';
+			//CONSULTA PARA PODER VER SI ESE PRODUCTO ESTA EN LA CESTA
+			$carrito = new carritoModel();
+			$row2 = $carrito->comprobarCarrito($url[2]);
 		}
 		ob_clean();
-
+		
 		
 		
 
@@ -111,6 +115,11 @@ class producto extends Controller{
 		$id_producto = $_POST['id_producto'];
 
 		$this->model->deleteItem($id_producto);
+	}
+
+	function mostrarPorSubcategoria() {
+		$item = $_GET['subcategoria'];
+		$this->model->mostrarPorSubcategoria($item);
 	}
 
 

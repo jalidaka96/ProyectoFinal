@@ -2,7 +2,7 @@ miApp.controller("loginCtrl", function($scope) {
 	$scope.usuario="";
 	$scope.password="";
 	$scope.login = function() {
-		
+		event.preventDefault();
 		if ($scope.usuario == '') {
 			$scope.confirmUsuario = "Debes introducir un nombre de usuario!";
 			$scope.confirmStyleU = {
@@ -26,21 +26,28 @@ miApp.controller("loginCtrl", function($scope) {
 				data: $scope.data,
 				url: '/proyecto/login/login',
 				type: 'post',
-				beforeSend : function() {
-					$scope.enviando = "Enviando";
+				beforeSend: function() {
+					$scope.loginError = true;
 				},
 				success: function(response) {
 					if (response == "Iniciado") {
 						location.href = '/proyecto/';
 
 						
+					}
+
+					/*$scope.enviando = "";
+					if (response == "Iniciado") {
+						location.href = '/proyecto/';
+
+						
 					} else if (response == "Error en la autentificacion") {
 
-						alert("Nombre de usuario o contraseña incorrectos!")
+						//alert("Nombre de usuario o contraseña incorrectos!")
 						$scope.loginError = "Nombre de usuario o contraseña incorrectos!";
 					} else {
 						console.log(response)
-					}
+					}*/
 				}
 			});
 		}
